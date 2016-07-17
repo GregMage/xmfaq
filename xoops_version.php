@@ -58,7 +58,7 @@ $i                                          = 1;
 $modversion['templates'][$i]['file']        = 'xmfaq_index.tpl';
 $modversion['templates'][$i]['description'] = '';
 $i++;
-$modversion['templates'][$i]['file']        = 'xmfaq_viewquestion.tpl';
+$modversion['templates'][$i]['file']        = 'xmfaq_viewcategory.tpl';
 $modversion['templates'][$i]['description'] = '';
 
 // Menu
@@ -83,7 +83,7 @@ $modversion['config'][] = array(
 );
 
 $modversion['config'][] = array(
-    'name'        => 'index_columncontent',
+    'name'        => 'index_columncat',
     'title'       => '_MI_XMFAQ_PREF_COLUMNCATEGORY',
     'description' => '_MI_XMFAQ_PREF_COLUMNCATEGORY_DESC',
     'formtype'    => 'select',
