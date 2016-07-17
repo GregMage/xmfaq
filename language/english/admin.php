@@ -33,7 +33,13 @@ define('_AM_XMFAQ_INDEX_CAT', 'Categories');
 define('_AM_XMFAQ_INDEX_CAT_ACTIVE', '%s active categories');
 define('_AM_XMFAQ_INDEX_CAT_NOTACTIVE', '%s disabled categories');
 
-
+// category
+define('_AM_XMFAQ_CATEGORY_ADD', 'Add Category');
+define('_AM_XMFAQ_CATEGORY_DESC', 'Description');
+define('_AM_XMFAQ_CATEGORY_LIST', 'Category List');
+define('_AM_XMFAQ_CATEGORY_SUREDEL', 'Sure to delete this category? %s');
+define('_AM_XMFAQ_CATEGORY_TITLE', 'Title');
+define('_AM_XMFAQ_CATEGORY_WEIGHT', 'Weight');
 
 // error
 define('_AM_XMFAQ_ERROR_CAT', 'There are no categories in the database');
