@@ -45,7 +45,7 @@ if ($category_count > 0) {
 		$category_id                 = $category_arr[$i]->getVar('category_id');
 		$category['id']              = $category_id;
 		$category['title']           = $category_arr[$i]->getVar('category_title');
-		$category['description']     = $category_arr[$i]->getVar('category_description');
+		$category['description']     = $category_arr[$i]->getVar('category_description', 'show');
 		$category['count']           = $count;
 		if ($count_row == $count){
 			$category['row'] = true;
@@ -68,8 +68,6 @@ if ($category_count > 0) {
 		$nav = new XoopsPageNav($category_count_total, $nb_limit, $start, 'start');
 		$xoopsTpl->assign('nav_menu', $nav->renderNav(4));
 	}
-} else {
-	$xoopsTpl->assign('simple_contact', true);
 }
 //SEO
 //description
