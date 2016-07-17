@@ -32,6 +32,9 @@ define('_AM_XMFAQ_VIEW', 'View Details');
 define('_AM_XMFAQ_INDEX_CAT', 'Categories');
 define('_AM_XMFAQ_INDEX_CAT_ACTIVE', '%s active categories');
 define('_AM_XMFAQ_INDEX_CAT_NOTACTIVE', '%s disabled categories');
+define('_AM_XMFAQ_INDEX_QUESTION', 'Questions');
+define('_AM_XMFAQ_INDEX_QUESTION_ACTIVE', 'There are %s active questions');
+define('_AM_XMFAQ_INDEX_QUESTION_NACTIVE', 'There are %s non active questions');
 
 // category
 define('_AM_XMFAQ_CATEGORY_ADD', 'Add Category');

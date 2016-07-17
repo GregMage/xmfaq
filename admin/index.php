@@ -33,15 +33,15 @@ $admin_class->addInfoBoxLine(_AM_XMFAQ_INDEX_CAT, _AM_XMFAQ_INDEX_CAT_ACTIVE, $c
 $admin_class->addInfoBoxLine(_AM_XMFAQ_INDEX_CAT, _AM_XMFAQ_INDEX_CAT_NOTACTIVE, $category_notactive, 'red');
 
 // question
-/*$criteria = new CriteriaCompo();
+$criteria = new CriteriaCompo();
 $criteria->add(new Criteria('question_status', 1));
-$question_active = $content_Handler->getCount($criteria);
+$question_active = $question_Handler->getCount($criteria);
 $criteria = new CriteriaCompo();
 $criteria->add(new Criteria('question_status', 0));
-$question_nactive = $content_Handler->getCount($criteria);
-$admin_class->addInfoBox(_AM_XMFAQ_INDEX_CONTENT);
-$admin_class->addInfoBoxLine(_AM_XMFAQ_QUESTION_CONTENT, _AM_XMFAQ_INDEX_QUESTION_ACTIVE, $question_active, 'green');
-$admin_class->addInfoBoxLine(_AM_XMFAQ_QUESTION_CONTENT, _AM_XMFAQ_INDEX_QUESTION_NACTIVE, $question_nactive, 'red');*/
+$question_nactive = $question_Handler->getCount($criteria);
+$admin_class->addInfoBox(_AM_XMFAQ_INDEX_QUESTION);
+$admin_class->addInfoBoxLine(_AM_XMFAQ_INDEX_QUESTION, _AM_XMFAQ_INDEX_QUESTION_ACTIVE, $question_active, 'green');
+$admin_class->addInfoBoxLine(_AM_XMFAQ_INDEX_QUESTION, _AM_XMFAQ_INDEX_QUESTION_NACTIVE, $question_nactive, 'red');
 
 $xoopsTpl->assign('navigation', $admin_class->addNavigation('index.php'));
 $xoopsTpl->assign('renderindex', $admin_class->renderIndex());
