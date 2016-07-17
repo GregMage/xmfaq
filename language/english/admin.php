@@ -41,6 +41,16 @@ define('_AM_XMFAQ_CATEGORY_SUREDEL', 'Sure to delete this category? %s');
 define('_AM_XMFAQ_CATEGORY_TITLE', 'Title');
 define('_AM_XMFAQ_CATEGORY_WEIGHT', 'Weight');
 
+// question
+define('_AM_XMFAQ_QUESTION_ADD', 'Add Question');
+define('_AM_XMFAQ_QUESTION_ANSWER', 'Answer');
+define('_AM_XMFAQ_QUESTION_INFORMATION', 'Informations');
+define('_AM_XMFAQ_QUESTION_LIST', 'Question List');
+define('_AM_XMFAQ_QUESTION_SUREDEL', 'Sure to delete this question? %s');
+define('_AM_XMFAQ_QUESTION_TITLE', 'Title');
+define('_AM_XMFAQ_QUESTION_WEIGHT', 'Weight');
+
 // error
 define('_AM_XMFAQ_ERROR_CAT', 'There are no categories in the database');
+define('_AM_XMFAQ_ERROR_QUESTION', 'There are no questions in the database');
 define('_AM_XMFAQ_ERROR_WEIGHT', 'Weight must be a number');

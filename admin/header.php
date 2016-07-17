@@ -37,8 +37,8 @@ $admin_class = new ModuleAdmin();
 
 // Get handler
 $category_Handler = xoops_getModuleHandler('xmfaq_category', 'xmfaq');
-/*$question_Handler = xoops_getModuleHandler('xmfaq_question', 'xmfaq');
+$question_Handler = xoops_getModuleHandler('xmfaq_question', 'xmfaq');
 // joint
-$request_Handler->table_link = $question_Handler->db->prefix('xmfaq_category'); // Nom de la table en jointure
-$request_Handler->field_link = 'category_id'; // champ de la table en jointure
-$request_Handler->field_object = 'question_cid'; // champ de la table courante*/
+$question_Handler->table_link = $question_Handler->db->prefix('xmfaq_category'); // Nom de la table en jointure
+$question_Handler->field_link = 'category_id'; // champ de la table en jointure
+$question_Handler->field_object = 'question_cid'; // champ de la table courante
