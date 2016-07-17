@@ -36,10 +36,10 @@
                 <td class="xo-actions txtcenter">
                     <img id="loading_sml<{$question.id}>" src="../images/spinner.gif" style="display:none;" title="<{$smarty.const._AM_SYSTEM_LOADING}>"
                     alt="<{$smarty.const._AM_SYSTEM_LOADING}>"/><img class="cursorpointer tooltip" id="sml<{$question.id}>"
-                    onclick="system_setStatus( { op: 'content_update_status', content_id: <{$question.id}> }, 'sml<{$question.id}>', 'question.php' )"
+                    onclick="system_setStatus( { op: 'question_update_status', question_id: <{$question.id}> }, 'sml<{$question.id}>', 'question.php' )"
                     src="<{if $question.status}><{xoAdminIcons success.png}><{else}><{xoAdminIcons cancel.png}><{/if}>"
                     alt="<{if $question.status}><{$smarty.const._AM_XMFAQ_STATUS_NA}><{else}><{$smarty.const._AM_XMFAQ_STATUS_A}><{/if}>"
-                    title="<{if $question.status}><{$smarty.const.__AM_XMFAQ_STATUS_NA}><{else}><{$smarty.const._AM_XMFAQ_STATUS_A}><{/if}>"/>
+                    title="<{if $question.status}><{$smarty.const._AM_XMFAQ_STATUS_NA}><{else}><{$smarty.const._AM_XMFAQ_STATUS_A}><{/if}>"/>
                 </td>
                 <td class="xo-actions txtcenter">
                     <a class="tooltip" href="question.php?op=view&amp;question_id=<{$question.id}>" title="<{$smarty.const._AM_XMFAQ_VIEW}>">
