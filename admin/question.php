@@ -43,6 +43,8 @@ switch ($op) {
         $start = XoopsRequest::getInt('start', 0);
         // Criteria
         $criteria = new CriteriaCompo();
+		$criteria->setSort('question_weight ASC, question_title');
+        $criteria->setOrder('ASC');
         $criteria->setStart($start);
         $criteria->setLimit($nb_limit);
         // question
