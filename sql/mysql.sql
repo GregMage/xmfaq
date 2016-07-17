@@ -3,6 +3,7 @@ CREATE TABLE `xmfaq_question` (
   `question_cid` int(11) NOT NULL DEFAULT '0',
   `question_title` varchar(255) NOT NULL DEFAULT '',
   `question_answer` text NOT NULL,
+  `question_weight` int(11) NOT NULL DEFAULT '0',
   `question_status` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`question_id`),
   KEY `request_name` (`question_title`)
