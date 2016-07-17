@@ -43,4 +43,3 @@ define('_MI_XMFAQ_PREF_INDEXPERPAGE', 'Number of items per page in the Admin vie
 define('_MI_XMFAQ_PREF_HEAD_ADMIN', "<span style='font-weight: bold;'>Administration</span>");
 define('_MI_XMFAQ_PREF_EDITOR', 'Text Editor');
 define('_MI_XMFAQ_PREF_ADMINPERPAGE', 'Number of items per page in the Admin view');
-
