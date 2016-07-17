@@ -142,7 +142,7 @@ $modversion['config'][] = array(
 
 $modversion['config'][] = array(
     'name'        => 'admin_perpage',
-    'title'       => '_MI_XMFAQ_PREF_ITEMPERPAGE',
+    'title'       => '_MI_XMFAQ_PREF_ADMINPERPAGE',
     'description' => '',
     'formtype'    => 'textbox',
     'valuetype'   => 'int',
