@@ -18,3 +18,9 @@
  */
 // index.php
 define('_MD_XMFAQ_INDEX_VIEW', 'View FAQ');
+
+// viewcategory.php
+define('_MD_XMFAQ_VIEWCATEGORY_LISTCAT', 'List of categories');
+define('_MD_XMFAQ_VIEWCATEGORY_NACTIVE', 'Error: Disable category!');
+define('_MD_XMFAQ_VIEWCATEGORY_NOCAT', 'Error: No category!');
+define('_MD_XMFAQ_VIEWCATEGORY_NOQUESTIONS', 'There are no questions in this category!');
