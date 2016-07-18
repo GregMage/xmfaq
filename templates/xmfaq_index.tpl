@@ -1,4 +1,7 @@
-﻿<{if $index_header}>
+﻿<ol class="breadcrumb">
+    <li class="active"><{$smarty.const._MD_XMFAQ_VIEWCATEGORY_LISTCAT}></li>
+</ol>
+<{if $index_header}>
 <div class="row">
     <div class="col-sm-12" style="padding-bottom: 10px; padding-top: 5px;">
         <{$index_header}>
