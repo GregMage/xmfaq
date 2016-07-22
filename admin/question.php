@@ -184,7 +184,7 @@ switch ($op) {
         
         $message_error = '';
         $question['title'] = XoopsRequest::getString('question_title', '', 'POST');
-        $question['answer'] = XoopsRequest::getString('question_answer', '', 'POST');
+        $question['answer'] = XoopsRequest::getText('question_answer', '', 'POST');
 		$question['cid'] = XoopsRequest::getInt('question_cid', 0, 'POST');
         $question['weight'] = $_POST['question_weight'];
         $question['status'] = XoopsRequest::getInt('question_status', 0, 'POST');
