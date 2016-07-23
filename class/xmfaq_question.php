@@ -39,6 +39,7 @@ class xmfaq_question extends XoopsObject
         $this->initVar('question_answer', XOBJ_DTYPE_TXTAREA, null, false);
         $this->initVar('question_weight', XOBJ_DTYPE_INT, 0, false, 5);
         $this->initVar('question_status', XOBJ_DTYPE_INT, null, false, 10);
+        $this->initVar('dohtml', XOBJ_DTYPE_INT, 1, false);
 
         //pour les jointures:
         $this->initVar('category_title', XOBJ_DTYPE_TXTBOX, null, false);
