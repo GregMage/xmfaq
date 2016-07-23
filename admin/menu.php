@@ -17,32 +17,32 @@
  * @author          Mage Gregory (AKA Mage)
  */
 
-defined("XOOPS_ROOT_PATH") or die("XOOPS root path not defined");
+defined('XOOPS_ROOT_PATH') || die('XOOPS root path not defined');
 
-$module_handler  = xoops_gethandler('module');
-$module          = $module_handler->getByDirname(basename(dirname(dirname(__FILE__))));
-$pathIcon32 = '../../' . $module->getInfo('icons32');
+$moduleHandler = xoops_getHandler('module');
+$module         = $moduleHandler->getByDirname(basename(dirname(__DIR__)));
+$pathIcon32     = '../../' . $module->getInfo('icons32');
 xoops_loadLanguage('modinfo', $module->dirname());
 
 $adminmenu = array();
 
 $i                      = 1;
-$adminmenu[$i]["title"] = _MI_XMFAQ_MENU_HOME;
-$adminmenu[$i]["link"]  = "admin/index.php";
-$adminmenu[$i]["desc"]  = _MI_XMFAQ_MENU_HOME_DESC;
-$adminmenu[$i]["icon"]  = $pathIcon32 . '/home.png';
+$adminmenu[$i]['title'] = _MI_XMFAQ_MENU_HOME;
+$adminmenu[$i]['link']  = 'admin/index.php';
+$adminmenu[$i]['desc']  = _MI_XMFAQ_MENU_HOME_DESC;
+$adminmenu[$i]['icon']  = $pathIcon32 . '/home.png';
 $i++;
-$adminmenu[$i]["title"] = _MI_XMFAQ_MENU_CATEGORY;
-$adminmenu[$i]["link"]  = "admin/category.php";
-$adminmenu[$i]["desc"]  = _MI_XMFAQ_MENU_CATEGORY_DESC;
-$adminmenu[$i]["icon"]  = $pathIcon32 . '/category.png';
+$adminmenu[$i]['title'] = _MI_XMFAQ_MENU_CATEGORY;
+$adminmenu[$i]['link']  = 'admin/category.php';
+$adminmenu[$i]['desc']  = _MI_XMFAQ_MENU_CATEGORY_DESC;
+$adminmenu[$i]['icon']  = $pathIcon32 . '/category.png';
 $i++;
-$adminmenu[$i]["title"] = _MI_XMFAQ_MENU_REQUEST;
-$adminmenu[$i]["link"]  = "admin/question.php";
-$adminmenu[$i]["desc"]  = _MI_XMFAQ_MENU_REQUEST_DESC;
-$adminmenu[$i]["icon"]  = $pathIcon32 . '/faq.png';
+$adminmenu[$i]['title'] = _MI_XMFAQ_MENU_REQUEST;
+$adminmenu[$i]['link']  = 'admin/question.php';
+$adminmenu[$i]['desc']  = _MI_XMFAQ_MENU_REQUEST_DESC;
+$adminmenu[$i]['icon']  = $pathIcon32 . '/faq.png';
 $i++;
-$adminmenu[$i]["title"] = _MI_XMFAQ_MENU_ABOUT;
-$adminmenu[$i]["link"]  = "admin/about.php";
-$adminmenu[$i]["desc"]  = _MI_XMFAQ_MENU_ABOUT_DESC;
-$adminmenu[$i]["icon"]  = $pathIcon32 . '/about.png';
+$adminmenu[$i]['title'] = _MI_XMFAQ_MENU_ABOUT;
+$adminmenu[$i]['link']  = 'admin/about.php';
+$adminmenu[$i]['desc']  = _MI_XMFAQ_MENU_ABOUT_DESC;
+$adminmenu[$i]['icon']  = $pathIcon32 . '/about.png';

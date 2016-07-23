@@ -16,11 +16,10 @@
  * @license         GNU GPL 2 (http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
  * @author          Mage Gregory (AKA Mage)
  */
-require dirname(__FILE__) . '/header.php';
+require __DIR__ . '/header.php';
 
 // Header
 xoops_cp_header();
-
 
 // Get Action type
 $op = XoopsRequest::getCmd('op', 'list');
@@ -28,7 +27,7 @@ $op = XoopsRequest::getCmd('op', 'list');
 switch ($op) {
     // list of category
     case 'list':
-        default:
+    default:
         // Define Stylesheet
         $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/admin.css');
         $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
@@ -48,18 +47,18 @@ switch ($op) {
         $criteria->setOrder('ASC');
         $criteria->setStart($start);
         $criteria->setLimit($nb_limit);
-        $category_arr = $category_Handler->getall($criteria);
-        $category_count = $category_Handler->getCount($criteria);
+        $category_arr   = $categoryHandler->getall($criteria);
+        $category_count = $categoryHandler->getCount($criteria);
         $xoopsTpl->assign('category_count', $category_count);
 
         if ($category_count > 0) {
             foreach (array_keys($category_arr) as $i) {
-                $category_id                 = $category_arr[$i]->getVar('category_id');
-                $category['id']              = $category_id;
-                $category['title']           = $category_arr[$i]->getVar('category_title');
-                $category['description']     = $category_arr[$i]->getVar('category_description');
-                $category['weight']          = $category_arr[$i]->getVar('category_weight');
-                $category['status']          = $category_arr[$i]->getVar('category_status');
+                $category_id             = $category_arr[$i]->getVar('category_id');
+                $category['id']          = $category_id;
+                $category['title']       = $category_arr[$i]->getVar('category_title');
+                $category['description'] = $category_arr[$i]->getVar('category_description');
+                $category['weight']      = $category_arr[$i]->getVar('category_weight');
+                $category['status']      = $category_arr[$i]->getVar('category_status');
                 $xoopsTpl->append_by_ref('category', $category);
                 unset($category);
             }
@@ -68,11 +67,11 @@ switch ($op) {
                 $nav = new XoopsPageNav($category_count, $nb_limit, $start, 'start');
                 $xoopsTpl->assign('nav_menu', $nav->renderNav(4));
             }
-        } else{
+        } else {
             $xoopsTpl->assign('message_error', _AM_XMFAQ_ERROR_CAT);
         }
         break;
-    
+
     // add category
     case 'add':
         //navigation
@@ -81,9 +80,9 @@ switch ($op) {
         // Define button addItemButton
         $admin_class->addItemButton(_AM_XMFAQ_CATEGORY_LIST, 'category.php', 'list');
         $xoopsTpl->assign('renderbutton', $admin_class->renderButton());
-        
+
         // Create form
-        $obj  = $category_Handler->create();
+        $obj  = $categoryHandler->create();
         $form = $obj->getForm();
         // Assign form
         $xoopsTpl->assign('form', $form->render());
@@ -98,9 +97,9 @@ switch ($op) {
         $admin_class->addItemButton(_AM_XMFAQ_CATEGORY_ADD, 'category.php?op=add', 'add');
         $admin_class->addItemButton(_AM_XMFAQ_CATEGORY_LIST, 'category.php', 'list');
         $xoopsTpl->assign('renderbutton', $admin_class->renderButton());
-        
+
         // Create form
-        $obj  = $category_Handler->get($start = XoopsRequest::getInt('category_id', 0));
+        $obj  = $categoryHandler->get($start = XoopsRequest::getInt('category_id', 0));
         $form = $obj->getForm();
         // Assign form
         $xoopsTpl->assign('form', $form->render());
@@ -110,25 +109,24 @@ switch ($op) {
     case 'del':
         // Create form
         $category_id = XoopsRequest::getInt('category_id', 0);
-        $obj  = $category_Handler->get($category_id);
+        $obj         = $categoryHandler->get($category_id);
 
         if (isset($_POST['ok']) && $_POST['ok'] == 1) {
             if (!$GLOBALS['xoopsSecurity']->check()) {
                 redirect_header('category.php', 3, implode(',', $GLOBALS['xoopsSecurity']->getErrors()));
             }
-            if ($category_Handler->delete($obj)) {
+            if ($categoryHandler->delete($obj)) {
                 redirect_header('category.php', 2, _AM_XMFAQ_REDIRECT_SAVE);
             } else {
                 xoops_error($obj->getHtmlErrors());
             }
         } else {
-
-        
             $category_img = $obj->getVar('category_logo') ?: 'blank.gif';
             xoops_confirm(array(
-                              'ok' => 1,
+                              'ok'          => 1,
                               'category_id' => $category_id,
-                              'op' => 'del'), $_SERVER['REQUEST_URI'], sprintf(_AM_XMFAQ_CATEGORY_SUREDEL, $obj->getVar('category_title')));
+                              'op'          => 'del'
+                          ), $_SERVER['REQUEST_URI'], sprintf(_AM_XMFAQ_CATEGORY_SUREDEL, $obj->getVar('category_title')));
         }
         break;
     // save category
@@ -137,19 +135,19 @@ switch ($op) {
             redirect_header('category.php', 3, implode('<br />', $GLOBALS['xoopsSecurity']->getErrors()));
         }
         if (isset($_POST['category_id'])) {
-            $obj = $category_Handler->get(XoopsRequest::getInt('category_id', 0));
+            $obj = $categoryHandler->get(XoopsRequest::getInt('category_id', 0));
         } else {
-            $obj = $category_Handler->create();
+            $obj = $categoryHandler->create();
         }
         // error
         $message_error = '';
-        
+
         $obj->setVar('category_title', $_POST['category_title']);
         $obj->setVar('category_description', $_POST['category_description']);
         $obj->setVar('category_weight', $_POST['category_weight']);
         $status = ($_POST['category_status'] == 1) ? '1' : '0';
         $obj->setVar('category_status', $status);
-        if (intval($_REQUEST['category_weight'])==0 && $_REQUEST['category_weight'] != '0') {
+        if ((int)$_REQUEST['category_weight'] == 0 && $_REQUEST['category_weight'] != '0') {
             $message_error .= _AM_XMFAQ_ERROR_WEIGHT . '<br>';
         }
         if ($message_error != '') {
@@ -159,10 +157,10 @@ switch ($op) {
             $xoopsTpl->assign('message_error', $message_error);
             $form = $obj->getForm();
             $xoopsTpl->assign('form', $form->render());
-        }else{
-            if ($category_Handler->insert($obj)) {
+        } else {
+            if ($categoryHandler->insert($obj)) {
                 redirect_header('category.php', 2, _AM_XMFAQ_REDIRECT_SAVE);
-            }else {
+            } else {
                 $xoopsTpl->assign('message_error', $obj->getHtmlErrors());
             }
         }
@@ -172,10 +170,10 @@ switch ($op) {
     case 'category_update_status':
         $category_id = XoopsRequest::getInt('category_id', 0);
         if ($category_id > 0) {
-            $obj = $category_Handler->get($category_id);
+            $obj = $categoryHandler->get($category_id);
             $old = $obj->getVar('category_status');
             $obj->setVar('category_status', !$old);
-            if ($category_Handler->insert($obj)) {
+            if ($categoryHandler->insert($obj)) {
                 exit;
             }
             echo $obj->getHtmlErrors();

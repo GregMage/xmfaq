@@ -16,7 +16,7 @@
  * @license         GNU GPL 2 (http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
  * @author          Mage Gregory (AKA Mage)
  */
-require dirname(__FILE__) . '/header.php';
+require __DIR__ . '/header.php';
 
 // header
 xoops_cp_header();
@@ -24,10 +24,10 @@ xoops_cp_header();
 // category
 $criteria = new CriteriaCompo();
 $criteria->add(new Criteria('category_status', 1));
-$category_active = $category_Handler->getCount($criteria);
-$criteria = new CriteriaCompo();
+$category_active = $categoryHandler->getCount($criteria);
+$criteria        = new CriteriaCompo();
 $criteria->add(new Criteria('category_status', 0));
-$category_notactive = $category_Handler->getCount($criteria);
+$category_notactive = $categoryHandler->getCount($criteria);
 $admin_class->addInfoBox(_AM_XMFAQ_INDEX_CAT);
 $admin_class->addInfoBoxLine(_AM_XMFAQ_INDEX_CAT, _AM_XMFAQ_INDEX_CAT_ACTIVE, $category_active, 'green');
 $admin_class->addInfoBoxLine(_AM_XMFAQ_INDEX_CAT, _AM_XMFAQ_INDEX_CAT_NOTACTIVE, $category_notactive, 'red');
@@ -35,10 +35,10 @@ $admin_class->addInfoBoxLine(_AM_XMFAQ_INDEX_CAT, _AM_XMFAQ_INDEX_CAT_NOTACTIVE,
 // question
 $criteria = new CriteriaCompo();
 $criteria->add(new Criteria('question_status', 1));
-$question_active = $question_Handler->getCount($criteria);
-$criteria = new CriteriaCompo();
+$question_active = $questionHandler->getCount($criteria);
+$criteria        = new CriteriaCompo();
 $criteria->add(new Criteria('question_status', 0));
-$question_nactive = $question_Handler->getCount($criteria);
+$question_nactive = $questionHandler->getCount($criteria);
 $admin_class->addInfoBox(_AM_XMFAQ_INDEX_QUESTION);
 $admin_class->addInfoBoxLine(_AM_XMFAQ_INDEX_QUESTION, _AM_XMFAQ_INDEX_QUESTION_ACTIVE, $question_active, 'green');
 $admin_class->addInfoBoxLine(_AM_XMFAQ_INDEX_QUESTION, _AM_XMFAQ_INDEX_QUESTION_NACTIVE, $question_nactive, 'red');
