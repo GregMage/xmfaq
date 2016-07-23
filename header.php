@@ -17,7 +17,7 @@
  * @author          Mage Gregory (AKA Mage)
  */
 
-include dirname(dirname(dirname(__DIR__))) . '/mainfile.php';
+include dirname(dirname(__DIR__)) . '/mainfile.php';
 require_once dirname(__DIR__) . '/system/include/functions.php';
 XoopsLoad::load('XoopsRequest');
 include_once XOOPS_ROOT_PATH . '/class/pagenav.php';
