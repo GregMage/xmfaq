@@ -18,7 +18,7 @@
  */
 
 $modversion['name']           = _MI_XMFAQ_NAME;
-$modversion['version']        = '0.1';
+$modversion['version']        = '0.2';
 $modversion['description']    = _MI_XMFAQ_DESC;
 $modversion['credits']        = 'G. Mage';
 $modversion['author']         = 'G. Mage';
@@ -34,7 +34,7 @@ $modversion['icons32']        = 'Frameworks/moduleclasses/icons/32';
 $modversion['help']           = 'page=help';
 
 //about
-$modversion['release_date']        = '2016/07/22';
+$modversion['release_date']        = '2016/07/27';
 $modversion['module_website_url']  = 'http://www.xoops.org/';
 $modversion['module_website_name'] = 'XOOPS';
 $modversion['module_status']       = 'Final';
@@ -50,6 +50,11 @@ $modversion['system_menu'] = 1;
 $modversion['hasAdmin']   = 1;
 $modversion['adminindex'] = 'admin/index.php';
 $modversion['adminmenu']  = 'admin/menu.php';
+
+// Recherche
+$modversion['hasSearch'] = 1;
+$modversion['search']['file'] = 'include/search.inc.php';
+$modversion['search']['func'] = 'xmfaq_search';
 
 // Templates
 $i                                          = 1;
